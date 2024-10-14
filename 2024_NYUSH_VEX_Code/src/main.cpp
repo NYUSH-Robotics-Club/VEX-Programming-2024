@@ -7,6 +7,14 @@
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 #include "vex.h"
+#include "basic-functions.h"
+#include "auton-function.h"
+#include "parameters.h"
+#include "autonomous.h"
+#include "my-timer.h"
+#include "controller.h"
+#include "cstdlib"
+#include "sensors.h"
 
 using namespace vex;
 
@@ -19,9 +27,9 @@ vex::brain       Brain;
 int main() {
 
     Brain.Screen.printAt( 10, 50, "Hello V5" );
-   
+    defineController();
     while(1) {
-        
+        if 
         // Allow other tasks to run
         this_thread::sleep_for(10);
     }

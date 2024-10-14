@@ -7,6 +7,7 @@
 int t, A1, A2, A3, A4, L1, L2, R1, R2, X, Y, A, B, LEFT, RIGHT, UP, DOWN,
     last_L1, last_L2, last_R1, last_R2, 
     last_X, last_Y, last_A, last_B, last_LEFT, last_RIGHT, last_UP, last_DOWN;
+int joystickRightH, joystickRightV, joystickLeft_H, joystickLeft_V;
 /**
  * @brief 更新手柄按键和摇杆的输入
  * 
@@ -25,10 +26,10 @@ void defineController(){
     last_UP = UP;
     last_DOWN = DOWN;
     t = Brain.timer(vex::timeUnits::msec);
-    A1 = Controller1.Axis1.position(vex::percentUnits::pct);
-    A2 = Controller1.Axis2.position(vex::percentUnits::pct);
-    A3 = Controller1.Axis3.position(vex::percentUnits::pct);
-    A4 = Controller1.Axis4.position(vex::percentUnits::pct);
+    joystickRightH = Controller1.Axis1.position(vex::percentUnits::pct);
+    joystickRightV = Controller1.Axis2.position(vex::percentUnits::pct);
+    joystickLeft_V= Controller1.Axis3.position(vex::percentUnits::pct);
+    joystickLeft_H = Controller1.Axis4.position(vex::percentUnits::pct);
     L1 = Controller1.ButtonL1.pressing();
     L2 = Controller1.ButtonL2.pressing();
     R1 = Controller1.ButtonR1.pressing();
