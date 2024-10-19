@@ -114,7 +114,9 @@ void unlockBase(void) {
  * @param _input ranges from -100 : 100
 */
 void spinIntaker(float _input) {
-  _input = fabs(_input) > 100? sign(_input) * 100: _input;
+  if (fabs(_input) > 100) {  //fabs() is abs
+    _input = sign(_input) * 100; //sign() in math-tools.cpp, return the sign of the input
+  }
   if(!_input) {
     Motor_Intaker.stop(coast);
   }
