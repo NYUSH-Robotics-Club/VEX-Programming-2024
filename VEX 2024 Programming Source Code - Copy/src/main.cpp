@@ -20,14 +20,9 @@ void pre_auton(void) {
 void autonomous(void) {
   switch(auton_strategy) {
     case 0:
-      moveForward(50); // Move forward at 50% power
+      moveForward(50); // Move forward with 50% power
       this_thread::sleep_for(2000); // Wait for 2 seconds
-      unlockBase(); // Stop the robot
-      timerRotate(50, 1000); // Rotate at 50% power for 1 second
-      unlockBase(); // Stop the robot
-      // Move forward to a specific position
-      posForwardRel(50, 1000); // Move forward at 50% power for 1000 mm
-      unlockBase(); // Stop the robot
+      moveForward(0); // Stop moving
     case 1:
       break;
     case 2:
